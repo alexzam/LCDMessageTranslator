@@ -27,6 +27,19 @@ public class MainForm extends JDialog {
                 dialog.dispose();
             }
         });
+        encodeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String in = taSource.getText();
+                String out;
+                try {
+                    out = Encoder.encode(in);
+                } catch (Exception e1) {
+                    out = e1.getMessage();
+                }
+                taEncoded.setText(out);
+            }
+        });
     }
 
     public static void main(String[] args) {
