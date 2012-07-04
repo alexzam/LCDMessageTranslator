@@ -31,6 +31,23 @@
     <entry_points version="2.0" />
   </component>
   <component name="IdProvider" IDEtalkID="79F59E04FCAEA5CA4A1943538B1E0771" />
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -167,7 +184,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="JavaSE-1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/target" />
   </component>
   <component name="VcsDirectoryMappings">
@@ -177,13 +194,13 @@
   <component name="libraryTable">
     <library name="Maven: com.intellij:forms_rt:5.0">
       <CLASSES>
-        <root url="jar://T:/repository/com/intellij/forms_rt/5.0/forms_rt-5.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/5.0/forms_rt-5.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://T:/repository/com/intellij/forms_rt/5.0/forms_rt-5.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/5.0/forms_rt-5.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://T:/repository/com/intellij/forms_rt/5.0/forms_rt-5.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/5.0/forms_rt-5.0-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

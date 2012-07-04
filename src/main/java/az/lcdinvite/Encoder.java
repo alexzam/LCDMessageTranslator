@@ -6,6 +6,7 @@ import java.util.Map;
 public class Encoder {
     private static Map<Character, Character> charmap = new HashMap<Character, Character>() {
         {
+            put(' ', (char) 0x20);
             put('!', (char) 0x21);
             put('"', (char) 0x22);
             put('#', (char) 0x23);
@@ -127,6 +128,8 @@ public class Encoder {
                 c1 = (char) (c - 'a' + 0x61);
             } else if (c >= '0' && c <= '9') {
                 c1 = (char) (c - '0' + 0x30);
+            } else if (c == '\n') {
+                out.append('\n');
             } else {
                 Character val = charmap.get(c);
                 if (val == null) throw new RuntimeException("Unknown character " + c);
