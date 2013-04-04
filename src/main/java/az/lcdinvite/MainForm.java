@@ -54,29 +54,39 @@ public class MainForm extends JDialog {
             System.exit(0);
         } else {
             try {
-                System.err.println("Opening file " + args[0]);
-                FileInputStream inFile = new FileInputStream(args[0]);
-                BufferedReader buf = new BufferedReader(new InputStreamReader(inFile, Charset.forName("windows-1251")));
+                String inFilename = args[0];
+                System.out.println("Opening file " + inFilename);
+                FileInputStream inFile = new FileInputStream(inFilename);
+                BufferedReader bufR = new BufferedReader(new InputStreamReader(inFile, Charset.forName("windows-1251")));
+
+                String outFilename = inFilename.replaceFirst("\\.[^\\.]+$", ".out");
+                System.out.println("Writing file " + outFilename);
+                FileOutputStream outfile = new FileOutputStream(outFilename);
+                PrintStream bufW = new PrintStream(outfile);
 
                 String inStr;
                 int strCount = 0;
-                while ((inStr = buf.readLine()) != null) {
+                while ((inStr = bufR.readLine()) != null) {
                     strCount++;
                     String outStr = Encoder.encode(inStr.trim());
                     int len = inStr.replaceAll("\\\\..", "C").length();
-                    System.out.print(".db ");
+                    bufW.print(".db ");
+
                     int num = (int) Math.floor(.5 * (screenWidth - len));
                     for (int i = 0; i < num; i++) {
-                        System.out.print("0x20,");
+                        bufW.print("0x20,");
                     }
-                    System.out.print(outStr);
+                    bufW.print(outStr);
                     num = (int) Math.ceil(.5 * (screenWidth - len));
                     for (int i = 0; i < num; i++) {
-                        System.out.print(",0x20");
+                        bufW.print(",0x20");
                     }
-                    System.out.println();
+                    bufW.println();
                 }
-                System.out.println("// Total encoded: " + strCount);
+                bufW.println("// Total encoded: " + strCount + " lines");
+                System.out.println("Total encoded: " + strCount + " lines");
+                bufR.close();
+                bufW.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
